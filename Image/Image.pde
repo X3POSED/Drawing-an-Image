@@ -10,6 +10,25 @@ appWidth = width;
 appHeight = height;
 //
 //Aspect Ratio of Background Image
+//Stephen-King-696x442.png
+int picWidth = 696;
+int picHeight = 442;
+//Image Orientation: Landscape, Square, Portrait
+if ( picWidth >= picHeight ) { //True if Landscape or Square
+largerDimension = picWidht;
+smallerDimension = picHeight;
+widthLarger = true;
+} else { //False if Portrait
+largerDimension = picWidht;
+smallerDimension = picHeight;
+heightLarger = true;
+}
+//
+//Aspect Ration Calculations
+if ( widthLarger ==true ) imageWidthRation = largerDimension / largerDimension;
+if ( widthLarger == true) imageHeightRation = smallerDimension  / largerDimension;
+if ( heightLarger ==true ) imageWidthRation = smallerDimension / largerDimension;
+if ( heightLarger == true) imageHeightRation = largerDimension / largerDimension;
 //Population
 pic = loadImage("../Images Used/Stephen-King-696x442.png");
 backgroundImageX = appWidth*0;
