@@ -36,9 +36,13 @@ backgroundImageY = appHeight*0;
 backgroundImageWidth = appWidth-1;
 backgroundImageHeight = appHeight-1;
 //
+// Adjust Image Variables for Aspect Ratio
+float picWidthAdjusted, picHeightAdjusted;
+backgroundImageWidth = backgroundImageWidth * imageWidthRation;
+backgroundImageHeight = backgroundImageHeight * imageHeightRatio;
 //Rectangular Layout and Image Drawing to CANVAS
 rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
 if ( nightMode = false ) tint(255, 64); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
 if ( nightMode = true ) tint(64, 64, 40); //RGB: Night Mode
-image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
