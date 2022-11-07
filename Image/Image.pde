@@ -1,10 +1,12 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+float smallerDimension, largerDimension;
+Boolean widthLarger, heightLarger;
 PImage pic;
 Boolean nightMode=false;
 //
-size(800, 600); //Landscape
+size(696, 442); //Landscape
 //Copy Display Algorithm from Hello World
 appWidth = width;
 appHeight = height;
