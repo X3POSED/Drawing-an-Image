@@ -2,14 +2,16 @@
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage pic;
+Boolean nightMode=false;
 //
-size(1000, 800); //Landscape
-//Copy Display Algorithm
+size(800, 600); //Landscape
+//Copy Display Algorithm from Hello World
 appWidth = width;
 appHeight = height;
 //
+//Aspect Ratio of Background Image
 //Population
-pic = loadImage("../Images Used/https://wallpaperaccess.com/full/3430.jpg");
+pic = loadImage("../Images Used/Stephen-King-696x442.png");
 backgroundImageX = appWidth*0;
 backgroundImageY = appHeight*0;
 backgroundImageWidth = appWidth-1;
@@ -18,6 +20,6 @@ backgroundImageHeight = appHeight-1;
 //Rectangular Layout and Image Drawing to CANVAS
 rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
-//tint(255, 50); //use 1/2 tint value for white (i.e. 128/256=1.2)
-tint( 128, 128, 50); //Night Mode
+if ( nightMode = false ) tint(255, 64); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
+if ( nightMode = true ) tint(64, 64, 40); //RGB: Night Mode
 image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
