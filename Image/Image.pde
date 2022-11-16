@@ -28,8 +28,8 @@ void setup()
   int picHeight = 442;
   int picWidth2 = 860;//Bike Image
   int picHeight2 = 529;
-  int picWidth3 = 325;//Spiderman
-  int picHeight3 = 485;
+  int picWidth3 = 1391;//Spiderman
+  int picHeight3 = 1943;
   //
   //Image Orientation: Landscape, Square, Portrait
   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
