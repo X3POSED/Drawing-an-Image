@@ -36,6 +36,7 @@ void setup()
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
+  Boolean widthLager3=false, heightLarger3=false;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -118,40 +119,58 @@ void setup()
     heightLarger2 = true;
     //Portrait Image larger image to smaller rectangle (or larger)
     //Students to create
-     picHeightAdjusted2 = bottomHeight; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
-    picWidthAdjusted2 = picHeightAdjusted2 * imageHeightRatio2;
+    picHeightAdjusted2 = topHeight; //stretch or reduce
+    imageWidthRatio2 = smallerDimension2 / largerDimension2;
+    picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    if ( picWidthAdjusted2 > topWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
   }
-  //Background Image must be single executed code
-  if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
-  if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
-  image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
-}//End setup
-//
-void draw()
-{
-  image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
-  image(pic3, bottomX, bottomY, bottomWidth, bottomHeight);
-}//End draw
-//
-void keyPressed() {
-}//End keyPressed
-//
-void mousePressed() {
-  //  
-  //Mouse Pressed will control background image
-  if ( mouseButton == LEFT) {
-    nightMode = true;
-    rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-    tint(64, 64, 40, 85); //RGB: Night Mode
+  if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
+    largerDimension3 = picWidth3;
+    smallerDimension3 = picHeight3;
+    widthLarger3 = true;
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted3 = bottomWidth; //stretch or reduce
+    imageHeightRatio3 = smallerDimension3 / largerDimension3;
+    picHeightAdjusted3 = picWidthAdjusted3 * imageHeightRatio3;
+    println("here", picWidthAdjusted3, picHeightAdjusted3);
+    if ( picHeightAdjusted3 > bottomWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }     
+    //Background Image must be single executed code
+    if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
+    if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
     image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
-  }
-  if ( mouseButton == RIGHT ) {
-    nightMode = false;
-    rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-    tint(255, 50); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
-    image(pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
-  }
-}//End mousePressed
-//
-//End Main Program
+  }//End setup
+  //
+  void draw()
+  {
+    image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
+    image(pic3, bottomX, bottomY, picWidtbAdjusted3, picHeightAdjusted3);
+  }//End draw
+  //
+  void keyPressed() {
+  }//End keyPressed
+  //
+  void mousePressed() {
+    //  
+    //Mouse Pressed will control background image
+    if ( mouseButton == LEFT) {
+      nightMode = true;
+      rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+      tint(64, 64, 40, 85); //RGB: Night Mode
+      image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+    }
+    if ( mouseButton == RIGHT ) {
+      nightMode = false;
+      rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+      tint(255, 50); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
+      image(pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+    }
+  }//End mousePressed
+  //
+  //End Main Program
