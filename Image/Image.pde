@@ -140,7 +140,21 @@ void setup()
     if ( picHeightAdjusted3 > bottomWidth ) {
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
-    }     
+    }
+  } else { //False if Portrait
+    largerDimension3 = picHeight3;
+    smallerDimension3 = picWidth3;
+    heightLarger3 = true;
+    //Portrait Image larger image to smaller rectangle (or larger)
+    //Students to create
+    picHeightAdjusted3 = topHeight; //stretch or reduce
+    imageWidthRatio3 = smallerDimension3 / largerDimension3;
+    picWidthAdjusted3 = picHeightAdjusted3 * imageWidthRatio3;
+    println("here", picWidthAdjusted3, picHeightAdjusted3);
+    if ( picWidthAdjusted3 > topWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
     //Background Image must be single executed code
     if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
     if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
