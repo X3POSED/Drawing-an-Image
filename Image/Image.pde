@@ -22,13 +22,13 @@ void setup()
   appHeight = height;
   //
   //Image Dimensions for Aspect Ratio
-  //Obi-wan-star-wars-jedi-23864621-800-600.jpg
+  //Stephen-King-696x442.png
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 696;
+  int picWidth = 696;//Stephen King
   int picHeight = 442;
-  int picWidth2 = 860;
+  int picWidth2 = 860;//Bike Image
   int picHeight2 = 529;
-  int picWidth3 = 325;
+  int picWidth3 = 325;//Spiderman
   int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
@@ -74,7 +74,7 @@ void setup()
   //Population
   pic = loadImage("../Images Used/Landscape/Stephen-King-696x442.png");
   pic2 = loadImage("../Images Used/Landscape/bike.jpg");
-  pic3 = loadImage("../Images Used/Portrait/Stephen-King-696x442.png");
+  pic3 = loadImage("../Images Used/Portrait/rosanna-lam-spiderman-study.jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
